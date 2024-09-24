@@ -45,5 +45,6 @@
   "auth": {
     "user": "empresaX",
     "password": "123456"
-  }
+  },
+  "userImg":"http://image.com/image.png"
 }
