@@ -1,0 +1,38 @@
+{
+  "idEmpresa": 1,
+  "nomeEmpresa": "Empresa X",
+  "telefoneEmpresa": "123456789",
+  "tipoEmpresa": "Tecnologia",
+  "endereco": {
+    "cidade": "São Paulo",
+    "UF": "SP",
+    "CEP": "12345-678",
+    "logradouro": "Rua Teste",
+    "numero": "123",
+    "bairro": "Bairro Teste",
+    "complemento": "Apto 401"
+
+  },
+  "redesSociais": {
+    "facebook": "facebook.com/empresaX",
+    "instagram": "instagram.com/empresaX",
+    "linkedin": "linkedin.com/company/empresaX"
+  },
+
+  "mensagens": [
+    {
+      "idMsg": 1,
+      "idEmpresaEnvia": 2,
+      "idEmpresaRecebe": 3,
+      "mensagem": "Olá, gostaria de colaborar com vocês."
+    }
+  ],
+  "servicos": [
+    "1", 
+    "2",
+    "3",
+    "4",
+    "5",
+    "6" 
+  ]
+}
