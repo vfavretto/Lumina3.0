@@ -2,11 +2,18 @@
   "idEmpresa": 1,
   "nomeEmpresa": "Empresa X",
   "telefoneEmpresa": "123456789",
-  "tipoEmpresa": "Tecnologia",
+  "emailEmpresa": "empresaX@email.com",
+  "siteEmpresa":"empresaX.com.br",
+  "tipoEmpresa": [
+    "Fornecedor",
+    "Contratante",
+    "Ambos"
+  ],
+  "CNPJ": "69885393000911",
   "endereco": {
     "cidade": "São Paulo",
     "UF": "SP",
-    "CEP": "12345-678",
+    "CEP": "12345678",
     "logradouro": "Rua Teste",
     "numero": "123",
     "bairro": "Bairro Teste",
