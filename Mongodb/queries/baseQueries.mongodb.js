@@ -2,6 +2,9 @@ use("lumina");
 db.empresas.find({}, { nomeEmpresa: 1, endereco: 1, _id: 0 });
 
 use("lumina");
+db.empresas.find().count();
+
+use("lumina");
 db.empresas.find(
   { nomeEmpresa: /empresa/i },
   { nomeEmpresa: 1, endereco: 1, _id: 0 }
