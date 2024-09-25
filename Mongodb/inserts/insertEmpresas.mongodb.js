@@ -254,12 +254,4 @@ db.empresas.insertMany ([
               "password": "senhaRenovavel456"
             }
           }
-          
-          
-          
-
-
-          
-      
-      
 ])
