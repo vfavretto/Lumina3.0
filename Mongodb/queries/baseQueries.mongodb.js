@@ -1,3 +1,4 @@
+
 use("lumina");
 db.empresas.find({}, { nomeEmpresa: 1, endereco: 1, _id: 0 });
 

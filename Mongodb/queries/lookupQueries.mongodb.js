@@ -12,7 +12,7 @@ db.empresas.aggregate([
       $project: {
         nomeEmpresa: 1,
         tipoEmpresa: 1,
-        "servicosDetalhados.nomeServ": 1,
+        "servicosDetalhados.idServ": 1,
         _id: 0
       }
     }
