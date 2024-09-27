@@ -3,7 +3,7 @@ db.empresas.aggregate([
     {
       $lookup: {
         from: "servicos",
-        localField: "servicos",
+        localField: "empresas",
         foreignField: "idServ",
         as: "servicosDetalhados"
       }
@@ -12,7 +12,7 @@ db.empresas.aggregate([
       $project: {
         nomeEmpresa: 1,
         tipoEmpresa: 1,
-        "servicosDetalhados.idServ": 1,
+        "servicosDetalhados.servicos.idServ": 1,
         _id: 0
       }
     }
