@@ -6,7 +6,7 @@ import Partners from './components/pages/partners';
 import Blog from './components/pages/blog';
 import Login from './components/pages/login';
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Header />
