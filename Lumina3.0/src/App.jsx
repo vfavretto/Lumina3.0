@@ -4,7 +4,8 @@ import Home from './components/pages/home';
 import About from './components/pages/about';
 import Partners from './components/pages/partners';
 import Blog from './components/pages/blog';
-import Login from './components/pages/login';
+import Login from './components/pages/login.jsx';
+import Footer from './components/common/footer';
 
 function App() {
   return (
@@ -12,11 +13,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+   <Footer />
     </Router>
   );
 };
