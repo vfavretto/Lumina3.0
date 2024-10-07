@@ -18,6 +18,11 @@
 ## :page_facing_up: Sobre o Projeto
 Projeto de plataforma digital que integra empresas que oferecem serviços a cerca da sustentabilidade, empresas que fornecem serviços encontram empresas que precisam dos seviços podendo se contatar. A inclusão de governos e ONGs como partes interessadas amplia o alcance do projeto, transformando-o em um hub abrangente para diversos setores comprometidos com a sustentabilidade. Essa abordagem holística  reflete a ambição do projeto em catalisar não apenas a mudança no âmbito empresarial, mas também influenciar políticas públicas e iniciativas sociais em prol de um futuro mais sustentável. O Lumina não apenas compartilha conhecimento, mas aspira a ser um catalisador para transformações positivas em escala global, unindo diversos agentes para enfrentar os desafios contemporâneos de maneira colaborativa.
   
+## MER e Collections
+MER
+![MER](https://i.imgur.com/FSLNTdy.png)
+Collections
+![COLLECTIONS](https://i.imgur.com/oxN61W7.png)
 
 <span id="prototipos">
 
