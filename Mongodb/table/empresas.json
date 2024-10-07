@@ -44,7 +44,11 @@
   ],
   "auth": {
     "user": "empresaX",
-    "password": "123456"
+    "password": "123456789"
   },
-  "userImg":"http://image.com/image.png"
+  "userImg":"http://image.com/image.png",
+  "local": {
+      "type": "Point",
+      "coordinates": [-46.6097, -23.5842]
+    }
 }
