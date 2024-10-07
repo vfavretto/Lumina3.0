@@ -15,8 +15,7 @@ const Footer = () => {
           <div className="col-auto colRodape">
             <h5>Lumina Tech Consulting</h5>
             <p className="mb-2">
-              <i className="fa fa-phone" aria-hidden="true"></i> +55 15 99123
-              4567
+              <i class="fa fa-phone" aria-hidden="true"></i> +55 15 991234567
             </p>
             <p className="mb-2">
               <i className="fa fa-location-arrow" aria-hidden="true"></i>{" "}
