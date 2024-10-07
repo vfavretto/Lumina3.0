@@ -24,7 +24,7 @@ MER
 Collections
 ![COLLECTIONS](https://i.imgur.com/oxN61W7.png)
 ![COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
-![COLLETION ADM] (https://i.imgur.com/R8q5qvu.png)
+![COLLETION ADM](https://i.imgur.com/R8q5qvu.png)
 
 <span id="prototipos">
 
