@@ -18,20 +18,19 @@
     "numero": "123",
     "bairro": "Bairro Teste",
     "complemento": "Apto 401"
-
   },
   "redesSociais": {
     "facebook": "facebook.com/empresaX",
     "instagram": "instagram.com/empresaX",
     "linkedin": "linkedin.com/company/empresaX"
   },
-
   "mensagens": [
     {
       "idMsg": 1,
       "idEmpresaEnvia": 2,
       "idEmpresaRecebe": 3,
-      "mensagem": "Olá, gostaria de colaborar com vocês."
+      "mensagem": "Olá, gostaria de colaborar com vocês.",
+      "data": "2024-10-07T12:00:00Z"
     }
   ],
   "servicos": [
@@ -48,7 +47,7 @@
   },
   "userImg":"http://image.com/image.png",
   "local": {
-      "type": "Point",
-      "coordinates": [-46.6097, -23.5842]
-    }
+    "type": "Point",
+    "coordinates": [-46.6097, -23.5842]
+  }
 }
