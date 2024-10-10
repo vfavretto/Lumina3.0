@@ -6,9 +6,9 @@ import imgbar from "../../assets/images/Perfil/mensagensPerfil.png";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { handleLogin, handleRegister, error } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      await handleLogin(userName, password);
+      await handleLogin(email, password);
       navigate("/profile");
     } catch (error) {
       console.error("Erro no login:", error);
@@ -179,7 +179,7 @@ const Login = () => {
                     </div>
                   </div>
                   <div className="row mb-3">
-                    <label className="col-sm-2 col-form-label"></label>
+                    <label htmlFor="loginEmail" className="col-sm-2 col-form-label"></label>
                     <div className="col-sm-8">
                       <input
                         type="email"
