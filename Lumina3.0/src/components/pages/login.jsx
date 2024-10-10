@@ -16,7 +16,7 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      await handleLogin(email || userName, password);
+      await handleLogin(userName, email, password);
       navigate("/profile");
     } catch (error) {
       console.error("Erro no login:", error);
