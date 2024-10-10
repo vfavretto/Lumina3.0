@@ -8,6 +8,7 @@ import Blog from "./components/pages/blog";
 import Login from "./components/pages/login.jsx";
 import Footer from "./components/common/footer";
 import Profile from "./components/pages/profile.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 function App() {
   return (
@@ -21,7 +22,14 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route 
+            path="/profile" 
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
         <Footer />
       </Router>
