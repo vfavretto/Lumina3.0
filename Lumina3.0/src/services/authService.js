@@ -17,9 +17,9 @@ const setToken = (token) => {
     return !!token;
   };
   
-  export const login = async (email, password) => {
+  export const login = async (name, email, password) => {
     try {
-      const response = await axios.post(`${API_URL}/login`, { email, password });
+      const response = await axios.post(`${API_URL}/login`, {name, email, password });
       if (response.data.token) {
         setToken(response.data.token);
       }

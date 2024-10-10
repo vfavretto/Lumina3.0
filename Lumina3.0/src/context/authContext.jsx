@@ -12,9 +12,9 @@ export const AuthProvider = ({ children }) => {
     setIsAuth(isAuthenticated());
   }, []);
 
-  const handleLogin = async (username, password) => {
+  const handleLogin = async (name, email, password) => {
     try {
-      await login(username, password);
+      await login(name, email, password);
       setIsAuth(true);
       setError(null);
     } catch (error) {

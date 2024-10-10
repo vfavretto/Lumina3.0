@@ -29,8 +29,8 @@ app.post('/register', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const user = users.find(user => user.email === email);
+  const { name, email, password } = req.body;
+  const user = users.find(user => user.email === email) || users.find(user => user.name === name);
 
   if (!user) {
     return res.status(400).json({ message: 'User not found' });

@@ -16,7 +16,7 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      await handleLogin(email, password);
+      await handleLogin(email || userName, password);
       navigate("/profile");
     } catch (error) {
       console.error("Erro no login:", error);
@@ -179,7 +179,7 @@ const Login = () => {
                     </div>
                   </div>
                   <div className="row mb-3">
-                    <label htmlFor="loginEmail" className="col-sm-2 col-form-label"></label>
+                    <label htmlFor="email" className="col-sm-2 col-form-label"></label>
                     <div className="col-sm-8">
                       <input
                         type="email"
