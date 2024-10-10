@@ -13,7 +13,7 @@ const SECRET_KEY = 'your_secret_key'; // In a real app, use a secure, environmen
 // In-memory user storage (replace with a database in a real application)
 let users = [];
 
-app.post('/api/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   
   if (users.find(user => user.email === email)) {
@@ -28,12 +28,17 @@ app.post('/api/register', async (req, res) => {
   res.status(201).json({ token });
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = users.find(user => user.email === email);
 
-  if (!user || !(await bcrypt.compare(password, user.password))) {
-    return res.status(400).json({ message: 'Invalid credentials' });
+  if (!user) {
+    return res.status(400).json({ message: 'User not found' });
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+  if (!isPasswordValid) {
+    return res.status(400).json({ message: 'Invalid password' });
   }
 
   const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: '1h' });
@@ -42,4 +47,4 @@ app.post('/api/login', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-});
+}); 
