@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-catch */
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5173';
+const API_URL = 'http://localhost:5000';
 
 const setToken = (token) => {
   localStorage.setItem('token', token);

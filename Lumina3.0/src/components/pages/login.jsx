@@ -31,7 +31,7 @@ const Login = () => {
     }
     try {
       await handleRegister(fullName, email, password);
-      navigate("/dashboard");
+      navigate("/login");
     } catch (error) {
       console.error("Erro no registro:", error);
     }
