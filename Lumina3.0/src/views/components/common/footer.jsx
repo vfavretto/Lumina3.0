@@ -1,6 +1,6 @@
-import "../../assets/styles/footer.css";
-import whiteLogoMini from "../../assets/images/whiteLogoMini.png";
-import inicioPng from "../../assets/images/inicio.png";
+import "../../../assets/styles/footer.css";
+import whiteLogoMini from "../../../assets/images/whiteLogoMini.png";
+import inicioPng from "../../../assets/images/inicio.png";
 
 const Footer = () => {
   return (

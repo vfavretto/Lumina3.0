@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import "../../assets/styles/header.css";
-import whiteLogo from "../../assets/images/whiteLogo.png";
-import whiteLogoMini from "../../assets/images/whiteLogoMini.png";
+import "../../../assets/styles/header.css";
+import whiteLogo from "../../../assets/images/whiteLogo.png";
+import whiteLogoMini from "../../../assets/images/whiteLogoMini.png";
 
 const Header = () => {
   return (

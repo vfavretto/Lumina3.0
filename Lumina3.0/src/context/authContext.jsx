@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { login, register, isAuthenticated} from '../services/authService';
+import authController from '../controllers/authController';
 
 export const AuthContext = createContext(null);
 
@@ -9,12 +9,12 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsAuth(isAuthenticated());
+    setIsAuth(authController.isAuthenticated());
   }, []);
 
   const handleLogin = async (name, email, password) => {
     try {
-      await login(name, email, password);
+      await authController.login(name, email, password);
       setIsAuth(true);
       setError(null);
     } catch (error) {
@@ -23,9 +23,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const handleRegister = async (name, email, password) => {
+  const handleRegister = async (fullName, email, password) => {
     try {
-      await register(name, email, password);
+      await authController.register(fullName, email, password);
       setIsAuth(true);
       setError(null);
     } catch (error) {
@@ -33,8 +33,6 @@ export const AuthProvider = ({ children }) => {
       throw error;
     }
   };
-
-
 
   const value = {
     isAuth,
@@ -49,6 +47,5 @@ export const AuthProvider = ({ children }) => {
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
 
 export default AuthContext;
