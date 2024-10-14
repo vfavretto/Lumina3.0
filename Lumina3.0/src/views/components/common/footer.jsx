@@ -1,6 +1,6 @@
-import "../../assets/styles/footer.css";
-import whiteLogoMini from "../../assets/images/whiteLogoMini.png";
-import inicioPng from "../../assets/images/inicio.png";
+import "../../../assets/styles/footer.css";
+import whiteLogoMini from "../../../assets/images/whiteLogoMini.png";
+import inicioPng from "../../../assets/images/inicio.png";
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
               <i class="fa fa-phone" aria-hidden="true"></i> +55 15 991234567
             </p>
             <p className="mb-2">
-              <i className="fa fa-location-arrow" aria-hidden="true"></i>{" "}
+              <i className="fas fa-map-marker-alt" aria-hidden="true"></i>{" "}
               Bandeiras Centro Empresarial
             </p>
             <iframe
@@ -35,11 +35,11 @@ const Footer = () => {
           <div className="col-auto colRodape">
             <br />
             <p className="mb-2">
-              <i className="fa fa-whatsapp" aria-hidden="true"></i> +55 15 99123
+            <i className="fab fa-whatsapp" aria-hidden="true"></i> +55 15 99123
               4567
             </p>
             <p className="mb-2">
-              <i className="fa fa-instagram" aria-hidden="true"></i> luminatech
+            <i className="fab fa-instagram" aria-hidden="true"></i> luminatech
             </p>
           </div>
           <div className="col-auto align-self-end">
