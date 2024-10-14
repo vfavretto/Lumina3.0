@@ -1,34 +1,53 @@
-import UserModel from '../models/userModel';
-import { login, register, isAuthenticated } from '../services/authService';
+import User from '../models/userModel.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 class AuthController {
-  async login(name, email, password) {
-    try {
-      const result = await login(name, email, password);
-      return result;
-    } catch (error) {
-      throw error;
-    }
-  }
-
   async register(fullName, email, password) {
     try {
-      const user = new UserModel(fullName, email, password);
-      const validationErrors = user.validate();
-      
-      if (validationErrors.length > 0) {
-        throw new Error(validationErrors.join(", "));
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        throw new Error('User already exists');
       }
-      
-      const result = await register(fullName, email, password);
-      return result;
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const user = new User({ fullName, email, password: hashedPassword });
+      await user.save();
+
+      const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      return { user, token };
     } catch (error) {
       throw error;
     }
   }
 
-  isAuthenticated() {
-    return isAuthenticated();
+  async login(email, password) {
+    try {
+      const user = await User.findOne({ email });
+      if (!user) {
+        throw new Error('User not found');
+      }
+
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        throw new Error('Invalid password');
+      }
+
+      const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      return { user, token };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async isAuthenticated(token) {
+    try {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const user = await User.findById(decoded.userId);
+      return !!user;
+    } catch (error) {
+      return false;
+    }
   }
 }
 

@@ -15,13 +15,14 @@ const Login = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
+    console.log("Tentativa de login com:", email, password);
     try {
-      await handleLogin(userName, email, password);
-      navigate("/profile");
+        await handleLogin(userName, password);
+        navigate("/profile");
     } catch (error) {
-      console.error("Erro no login:", error);
+        console.error("Erro no login:", error);
     }
-  };
+};
 
   const onRegister = async (e) => {
     e.preventDefault();

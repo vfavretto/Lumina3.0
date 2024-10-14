@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/authContext.jsx";
+import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 import Header from "./views/components/common/header.jsx";
 import Home from "./views/pages/home.jsx";
 import About from "./views/pages/about.jsx";
@@ -24,7 +25,9 @@ function App() {
           <Route 
             path="/profile" 
             element={
+              <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
             } 
           />
         </Routes>

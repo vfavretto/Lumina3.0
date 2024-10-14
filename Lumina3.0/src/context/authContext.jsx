@@ -1,6 +1,6 @@
-import { createContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import authController from '../controllers/authController';
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -9,27 +9,52 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsAuth(authController.isAuthenticated());
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      setIsAuth(true);
+    }
   }, []);
 
-  const handleLogin = async (name, email, password) => {
+  const handleLogin = async (email, password) => {
     try {
-      await authController.login(name, email, password);
-      setIsAuth(true);
-      setError(null);
+        const response = await axios.post(
+            "http://localhost:5000/api/auth/login",
+            { email, password }
+        );
+        localStorage.setItem("token", response.data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
+        setIsAuth(true);
+        setError(null);
     } catch (error) {
-      setError(error.message);
-      throw error;
+        if (error.response) {
+            setError(error.response.data.error);
+        } else {
+            setError("Erro ao se conectar ao servidor.");
+        }
+        throw error;
     }
-  };
+};
 
   const handleRegister = async (fullName, email, password) => {
     try {
-      await authController.register(fullName, email, password);
+      const response = await axios.post("http://localhost:5000/api/auth/register", {
+        fullName,
+        email,
+        password,
+      });
+      localStorage.setItem("token", response.data.token);
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token}`;
       setIsAuth(true);
       setError(null);
     } catch (error) {
-      setError(error.message);
+      if (error.response) {
+        setError(error.response.data.error);
+      } else {
+        setError("Erro ao se conectar ao servidor.");
+      }
       throw error;
     }
   };
