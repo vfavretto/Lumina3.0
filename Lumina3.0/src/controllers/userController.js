@@ -2,7 +2,7 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-class AuthController {
+class UserController {
   async register(req, res) {
     const { fullName, email, password } = req.body;
     try {
@@ -82,6 +82,42 @@ class AuthController {
     }
   }
 
+  async updateUser(req, res) {
+    const { id } = req.params;
+    const updates = req.body;
+
+    try {
+      const user = await User.findByIdAndUpdate(id, updates, {
+        new: true,
+      });
+
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      return res.status(200).json(user);
+    } catch (error) {
+      console.error("Error updating user:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  }
+
+  async deleteUser(req, res) {
+    const { id } = req.params;
+
+    try {
+      const user = await User.findByIdAndDelete(id);
+
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      return res.status(204).json();
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      return res.status(500).json({ error: "Internal server error" });
+    }
+  }
 }
 
-export default new AuthController();
+export default new UserController();
