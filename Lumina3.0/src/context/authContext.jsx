@@ -26,6 +26,8 @@ export const AuthProvider = ({ children }) => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
         setIsAuth(true);
         setError(null);
+
+        return response.data;
     } catch (error) {
         if (error.response) {
             setError(error.response.data.error);
