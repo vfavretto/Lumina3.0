@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../assets/styles/home.css";
 import { Link } from "react-router-dom";
 import imgBanner1 from "../../assets/images/banner-home-1.png";
