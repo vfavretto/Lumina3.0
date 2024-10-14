@@ -3,11 +3,12 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 class AuthController {
-  async register(fullName, email, password) {
+  async register(req, res) {
+    const { fullName, email, password } = req.body;
     try {
       const existingUser = await User.findOne({ email });
       if (existingUser) {
-        throw new Error('User already exists');
+        return res.status(400).json({ error: 'User already exists' });
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -15,28 +16,29 @@ class AuthController {
       await user.save();
 
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-      return { user, token };
+      return res.status(201).json({ user, token });
     } catch (error) {
-      throw error;
+      return res.status(500).json({ error: error.message });
     }
   }
 
-  async login(email, password) {
+  async login(req, res) {
+    const { email, password } = req.body;
     try {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new Error('User not found');
+        return res.status(401).json({ error: 'User not found' });
       }
 
       const isPasswordValid = await bcrypt.compare(password, user.password);
       if (!isPasswordValid) {
-        throw new Error('Invalid password');
+        return res.status(401).json({ error: 'Invalid password' });
       }
 
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-      return { user, token };
+      return res.status(200).json({ user, token });
     } catch (error) {
-      throw error;
+      return res.status(500).json({ error: error.message });
     }
   }
 
