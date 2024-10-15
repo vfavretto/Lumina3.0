@@ -5,12 +5,6 @@
         "destination": "/index.html"
       }
     ],
-    "builds": [
-      {
-        "src": "src/server.js",
-        "use": "@vercel/node"
-      }
-    ],
     "routes": [
       {
         "src": "/api/(.*)",
