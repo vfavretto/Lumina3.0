@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/authContext.jsx";
-import Header from "./components/common/header";
-import Home from "./components/pages/home";
-import About from "./components/pages/about";
-import Partners from "./components/pages/partners";
-import Blog from "./components/pages/blog";
-import Login from "./components/pages/login.jsx";
-import Footer from "./components/common/footer";
-import Profile from "./components/pages/profile.jsx";
+import ProtectedRoute from "./routes/ProtectedRoute.jsx";
+import Header from "./views/components/common/header.jsx";
+import Home from "./views/pages/home.jsx";
+import About from "./views/pages/about.jsx";
+import Partners from "./views/pages/partners.jsx";
+import Blog from "./views/pages/blog.jsx";
+import Login from "./views/pages/login.jsx";
+import Footer from "./views/components/common/footer.jsx";
+import Profile from "./views/pages/profile.jsx";
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route 
-            path="/profile" 
+            path="/profile/:id" 
             element={
+              <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
             } 
           />
         </Routes>

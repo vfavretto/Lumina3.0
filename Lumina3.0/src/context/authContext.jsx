@@ -1,6 +1,6 @@
-import { createContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { login, register, isAuthenticated} from '../services/authService';
+import { createContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -9,32 +9,57 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsAuth(isAuthenticated());
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      setIsAuth(true);
+    }
   }, []);
 
-  const handleLogin = async (name, email, password) => {
+  const handleLogin = async (email, password) => {
     try {
-      await login(name, email, password);
+        const response = await axios.post(
+            "http://localhost:5000/api/auth/login",
+            { email, password }
+        );
+        localStorage.setItem("token", response.data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
+        setIsAuth(true);
+        setError(null);
+
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            setError(error.response.data.error);
+        } else {
+            setError("Erro ao se conectar ao servidor.");
+        }
+        throw error;
+    }
+};
+
+  const handleRegister = async (fullName, email, password) => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/auth/register", {
+        fullName,
+        email,
+        password,
+      });
+      localStorage.setItem("token", response.data.token);
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token}`;
       setIsAuth(true);
       setError(null);
     } catch (error) {
-      setError(error.message);
+      if (error.response) {
+        setError(error.response.data.error);
+      } else {
+        setError("Erro ao se conectar ao servidor.");
+      }
       throw error;
     }
   };
-
-  const handleRegister = async (name, email, password) => {
-    try {
-      await register(name, email, password);
-      setIsAuth(true);
-      setError(null);
-    } catch (error) {
-      setError(error.message);
-      throw error;
-    }
-  };
-
-
 
   const value = {
     isAuth,
@@ -49,6 +74,5 @@ export const AuthProvider = ({ children }) => {
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
 
 export default AuthContext;
