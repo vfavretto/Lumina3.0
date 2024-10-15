@@ -6,9 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-app.use(cors({
-    origin: 'https://lumina-liard.vercel.app/',
-}));
+app.use(cors());
 
 connectDB();
 
