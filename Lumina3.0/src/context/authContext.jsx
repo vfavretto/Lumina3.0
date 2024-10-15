@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (email, password) => {
     try {
         const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            "https://lumina-liard.vercel.app/api/auth/login",
             { email, password }
         );
         localStorage.setItem("token", response.data.token);
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
   const handleRegister = async (fullName, email, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
+      const response = await axios.post("https://lumina-liard.vercel.app/api/auth/register", {
         fullName,
         email,
         password,
