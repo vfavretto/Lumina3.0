@@ -2,11 +2,16 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/src/server.js"
+      "destination": "/api/$1"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 30
+    }
+  }
 }
