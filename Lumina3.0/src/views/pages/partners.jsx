@@ -30,18 +30,19 @@ const Partners = () => {
               <div
                 className={`botaoAnimado ${ativo === "EMPRESA" ? "posEmpresa" : "posFornecedor"}`}
               />
-              <button
-                onClick={() => troca("EMPRESA")}
-                className={`botao ${ativo === "EMPRESA" ? "ativo" : ""}`}
-              >
-                Empresa
-              </button>
-              <button
-                onClick={() => troca("FORNECEDOR")}
-                className={`botao ${ativo === "FORNECEDOR" ? "ativo" : ""}`}
-              >
-                Fornecedor
-              </button>
+                <button
+                  onClick={() => troca("EMPRESA")}
+                  className={`botao ${ativo === "EMPRESA" ? "ativo" : ""}`}
+                >
+                  Empresa
+                </button>
+                <button
+                  onClick={() => troca("FORNECEDOR")}
+                  className={`botao ${ativo === "FORNECEDOR" ? "ativo" : ""}`}
+                >
+                  Fornecedor
+                </button>
+
             </div>
           </div>
         </div>
