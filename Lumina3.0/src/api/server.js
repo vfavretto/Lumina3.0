@@ -12,7 +12,10 @@ connectDB();
 
 app.use(express.json());
 
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', (req, res, next) => {
+    console.log(`Received ${req.method} request for ${req.url}`);
+    next();
+  }, authRoutes);
 
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000;
