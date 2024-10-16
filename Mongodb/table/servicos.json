@@ -1,0 +1,34 @@
+{
+  "servicos": [
+    {
+      "idServ": "1",
+      "nomeServ": "Consultoria",
+      "descricaoServ": "Consultoria empresarial"
+    },
+    {
+      "idServ": "2",
+      "nomeServ": "Jardinagem",
+      "descricaoServ": "Serviços de jardinagem"
+    },
+    {
+      "idServ": "3",
+      "nomeServ": "Reciclagem",
+      "descricaoServ": "Coleta seletiva e Reciclagem"
+    },
+    {
+      "idServ": "4",
+      "nomeServ": "Documentação eletronica",
+      "descricaoServ": "Serviço de digitalização de arquivos e documentos"
+    },
+    {
+      "idServ": "5",
+      "nomeServ": "Paineis Solares",
+      "descricaoServ": "Instalação e manutenção de paineis solares"
+    },
+    {
+      "idServ": "6",
+      "nomeServ": "Outros",
+      "descricaoServ": "Outros serviços"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "idEmpresa": 1,
+  "nomeEmpresa": "Empresa X",
+  "telefoneEmpresa": "123456789",
+  "emailEmpresa": "empresaX@email.com",
+  "siteEmpresa":"empresaX.com.br",
+  "tipoEmpresa": [
+    "Fornecedor",
+    "Contratante",
+    "Ambos"
+  ],
+  "CNPJ": "69885393000911",
+  "endereco": {
+    "cidade": "São Paulo",
+    "UF": "SP",
+    "CEP": "12345678",
+    "logradouro": "Rua Teste",
+    "numero": "123",
+    "bairro": "Bairro Teste",
+    "complemento": "Apto 401"
+  },
+  "redesSociais": {
+    "facebook": "facebook.com/empresaX",
+    "instagram": "instagram.com/empresaX",
+    "linkedin": "linkedin.com/company/empresaX"
+  },
+  "mensagens": [
+    {
+      "idMsg": 1,
+      "idEmpresaEnvia": 2,
+      "idEmpresaRecebe": 3,
+      "mensagem": "Olá, gostaria de colaborar com vocês.",
+      "data": "2024-10-07T12:00:00Z"
+    }
+  ],
+  "servicos": [
+    "1", 
+    "2",
+    "3",
+    "4",
+    "5",
+    "6" 
+  ],
+  "auth": {
+    "user": "empresaX",
+    "password": "123456789"
+  },
+  "userImg":"http://image.com/image.png",
+  "local": {
+    "type": "Point",
+    "coordinates": [-46.6097, -23.5842]
+  }
+}
