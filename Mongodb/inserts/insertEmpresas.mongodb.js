@@ -30,7 +30,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 2,
         "idEmpresaRecebe": 1,
-        "mensagem": "Gostaríamos de saber mais sobre seus serviços."
+        "mensagem": "Gostaríamos de saber mais sobre seus serviços.",
+        "data": new Date("2024-03-15T10:30:00Z")
       }
     ],
     "servicos": [
@@ -76,7 +77,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 1,
         "idEmpresaRecebe": 2,
-        "mensagem": "Interessado em parceria para projeto sustentável."
+        "mensagem": "Interessado em parceria para projeto sustentável.",
+        "data": new Date("2024-04-02T14:45:00Z")
       }
     ],
     "servicos": [
@@ -122,7 +124,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 3,
         "idEmpresaRecebe": 1,
-        "mensagem": "Precisamos de fornecedores para energia limpa."
+        "mensagem": "Precisamos de fornecedores para energia limpa.",
+        "data": new Date("2024-05-20T09:15:00Z")
       }
     ],
     "servicos": [
@@ -168,7 +171,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 2,
         "idEmpresaRecebe": 4,
-        "mensagem": "Precisamos de uma proposta para soluções ambientais."
+        "mensagem": "Precisamos de uma proposta para soluções ambientais.",
+        "data": new Date("2024-06-10T16:20:00Z")
       }
     ],
     "servicos": [
@@ -214,7 +218,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 1,
         "idEmpresaRecebe": 5,
-        "mensagem": "Gostaríamos de uma proposta para coleta de resíduos."
+        "mensagem": "Gostaríamos de uma proposta para coleta de resíduos.",
+        "data": new Date("2024-07-05T11:00:00Z")
       }
     ],
     "servicos": [
@@ -260,7 +265,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 3,
         "idEmpresaRecebe": 6,
-        "mensagem": "Precisamos de soluções em energia solar."
+        "mensagem": "Precisamos de soluções em energia solar.",
+        "data": new Date("2024-08-18T13:30:00Z")
       }
     ],
     "servicos": [
@@ -306,7 +312,8 @@ db.empresas.insertMany([
         "idMsg": 1,
         "idEmpresaEnvia": 5,
         "idEmpresaRecebe": 7,
-        "mensagem": "Gostaríamos de uma consultoria para sustentabilidade."
+        "mensagem": "Gostaríamos de uma consultoria para sustentabilidade.",
+        "data": new Date("2024-09-30T15:45:00Z")
       }
     ],
     "servicos": [

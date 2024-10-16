@@ -1,10 +1,57 @@
 import "../../assets/styles/profile.css";
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import perfilFoto from "../../assets/images/Perfil/GM_oficina_foto.jpg";
 import perfilMsgimg from "../../assets/images/Perfil/mensagensPerfil.png";
 import foto1 from "../../assets/images/Perfil/foto1.png";
 import foto2 from "../../assets/images/Perfil/foto2.png";
 
 const Profile = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        await axios.get("https://lumina-nine-plum.vercel.app/api/auth/check", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+      } catch (error) {
+        console.error("Erro na verificação da autenticação:", error);
+        navigate("/login");
+      }
+    };
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get(`https://lumina-nine-plum.vercel.app/api/auth/user/${id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        setUserData(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar dados do usuário:', error);
+        setError('Erro ao carregar os dados do usuário.');
+      }
+    };
+
+    checkAuthentication();
+    fetchUserData();
+  }, [id, navigate]);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!userData) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <body>
       <main>
@@ -18,7 +65,7 @@ const Profile = () => {
                     src={perfilFoto}
                     alt="Imagem de perfil"
                   />
-                  <h5 className="perfilNome">Grupo Automec</h5>
+                  <h5 className="perfilNome">Grupo Automec {userData.fullName} </h5> {/* como usar os campos do usuario */}
                   <h5 className="perfilCargo">Lavínia Nogueira</h5>
                   <h5 className="perfilEmpresa">Gerente Geral</h5>
                 </figure>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../../assets/styles/partners.css'
 
 const Partners = () => {
