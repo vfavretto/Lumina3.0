@@ -4,18 +4,21 @@ import connectDB from '../config/database.js';
 import authRoutes from '../routes/userRoutes.js';
 import dotenv from 'dotenv';
 dotenv.config();
+const corsOptions = {
+    origin: 'https://lumina3-0.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    optionsSuccessStatus: 200,
+  };
 
 const app = express();
-app.use(cors());
+
+app.use(cors(corsOptions));
 
 connectDB();
 
 app.use(express.json());
 
-app.use('/api/auth', (req, res, next) => {
-    console.log(`Received ${req.method} request for ${req.url}`);
-    next();
-  }, authRoutes);
+app.use('/api/auth', authRoutes);
 
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000;
