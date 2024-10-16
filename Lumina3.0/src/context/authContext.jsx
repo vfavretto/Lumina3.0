@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (email, password) => {
     try {
       const response = await axios.post(
-        "https://lumina3-0.vercel.app/api/auth/login",
+        "https://lumina-nine-plum.vercel.app/api/auth/login",
         { email, password }
       );
       localStorage.setItem("token", response.data.token);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   const handleRegister = async (fullName, email, password) => {
     try {
       const response = await axios.post(
-        "https://lumina3-0.vercel.app/api/auth/register",
+        "https://lumina-nine-plum.vercel.app/api/auth/register",
         {
           fullName,
           email,
