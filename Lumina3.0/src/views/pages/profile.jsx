@@ -16,7 +16,7 @@ const Profile = () => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        await axios.get("http://localhost:5000/api/auth/check", {
+        await axios.get("https://lumina-nine-plum.vercel.app/api/auth/check", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -28,7 +28,7 @@ const Profile = () => {
     };
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/auth/user/${id}`, {
+        const response = await axios.get(`https://lumina-nine-plum.vercel.app/api/auth/user/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },

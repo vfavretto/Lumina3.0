@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
@@ -172,7 +173,7 @@ const Login = () => {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="🌐Nome Completo"
+                        placeholder="🌐 Nome Completo"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         required
@@ -188,7 +189,7 @@ const Login = () => {
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="✉️Digite seu email"
+                        placeholder="✉️ Digite seu email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -201,7 +202,7 @@ const Login = () => {
                       <input
                         type="password"
                         className="form-control"
-                        placeholder="🔑Digite uma senha"
+                        placeholder="🔑 Digite uma senha"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -214,7 +215,7 @@ const Login = () => {
                       <input
                         type="password"
                         className="form-control"
-                        placeholder="🗝️Confirme sua senha"
+                        placeholder="🗝️ Confirme sua senha"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required

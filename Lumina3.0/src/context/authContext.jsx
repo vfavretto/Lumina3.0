@@ -18,33 +18,38 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogin = async (email, password) => {
     try {
-        const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
-            { email, password }
-        );
-        localStorage.setItem("token", response.data.token);
-        axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
-        setIsAuth(true);
-        setError(null);
+      const response = await axios.post(
+        "https://lumina-nine-plum.vercel.app/api/auth/login",
+        { email, password }
+      );
+      localStorage.setItem("token", response.data.token);
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token}`;
+      setIsAuth(true);
+      setError(null);
 
-        return response.data;
+      return response.data;
     } catch (error) {
-        if (error.response) {
-            setError(error.response.data.error);
-        } else {
-            setError("Erro ao se conectar ao servidor.");
-        }
-        throw error;
+      if (error.response) {
+        setError(error.response.data.error);
+      } else {
+        setError("Erro ao se conectar ao servidor.");
+      }
+      throw error;
     }
-};
+  };
 
   const handleRegister = async (fullName, email, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
-        fullName,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://lumina-nine-plum.vercel.app/api/auth/register",
+        {
+          fullName,
+          email,
+          password,
+        }
+      );
       localStorage.setItem("token", response.data.token);
       axios.defaults.headers.common[
         "Authorization"
