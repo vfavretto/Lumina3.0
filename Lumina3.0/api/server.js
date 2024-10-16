@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://lumina-nine-plum.vercel.app'
+    origin: 'http://localhost:5000'
 }));
 
 connectDB();
