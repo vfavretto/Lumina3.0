@@ -1,3 +1,4 @@
+import React, { useRef, useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../assets/styles/home.css";
 import { Link } from "react-router-dom";
@@ -7,6 +8,51 @@ import imgBlog3 from "../../assets/images/blog/blog3.png";
 import imgBlog4 from "../../assets/images/blog/blog4.png";
 
 const Home = () => {
+  const carouselBlogRef = useRef(null);
+  const [posicao, setPosicao] = useState(0);
+  const [tamanhoCard, setTamanhoCard] = useState(0);
+  const [numCardsVisible, setNumCardsVisible] = useState(3);
+
+  useEffect(() => {
+    const updateCardSize = () => {
+      const card = carouselBlogRef.current.querySelector(".itemBlog");
+      if (card) {
+        setTamanhoCard(card.offsetWidth);
+      }
+      const width = window.innerWidth;
+      setNumCardsVisible(width < 768 ? 1 : 3);
+    };
+
+    updateCardSize();
+    window.addEventListener("resize", updateCardSize);
+
+    return () => {
+      window.removeEventListener("resize", updateCardSize);
+    };
+  }, []);
+
+  const proximoBlog = () => {
+    const maxScroll = (carouselBlogRef.current.scrollWidth - tamanhoCard);
+    if (posicao < maxScroll) {
+      setPosicao(prev => Math.min(prev + tamanhoCard, maxScroll));
+    }
+  };
+
+  const anteriorBlog = () => {
+    if (posicao > 0) {
+      setPosicao(prev => Math.max(prev - tamanhoCard, 0));
+    }
+  };
+
+  useEffect(() => {
+    if (carouselBlogRef.current) {
+      carouselBlogRef.current.scrollTo({
+        left: posicao,
+        behavior: "smooth"
+      });
+    }
+  }, [posicao]);
+
   return (
     <main className="body">
       <div id="circulo" className="carousel slide slideInicio">
@@ -144,7 +190,7 @@ const Home = () => {
       <div className="homeBlog w-100 pb-5">
         <h1 className="text-center">Blog</h1>
         <div id="carouselBlog" className="carousel">
-          <div className="carousel-inner carouselBlog">
+          <div className="carousel-inner carouselBlog" ref={carouselBlogRef}>
             {/* Blog Item 1 */}
             <div className="carousel-item active itemBlog">
               <div className="card">
@@ -188,13 +234,55 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            {/* Blog Item 4 */}
+            <div className="carousel-item active itemBlog">
+              <div className="card">
+                <img src={imgBlog2} className="d-block imgBlog" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">
+                    Cientistas Alcançam Novo Patamar na Computação Quântica
+                  </p>
+                  <Link to="/blog" className="d-flex justify-content-end">
+                    Leia mais +
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Blog Item 5 */}
+            <div className="carousel-item itemBlog">
+              <div className="card">
+                <img src={imgBlog3} className="d-block imgBlog" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">
+                    Reciclagem de Eletrônicos: Conheça os benefícios dessa Nova
+                    Tecnologia
+                  </p>
+                  <Link to="/blog" className="d-flex justify-content-end">
+                    Leia mais +
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {/* Blog Item 6 */}
+            <div className="carousel-item itemBlog">
+              <div className="card">
+                <img src={imgBlog4} className="d-block imgBlog" alt="..." />
+                <div className="card-body">
+                  <p className="card-text">
+                    Desenvolvedores criam código que Economiza nas impressões
+                  </p>
+                  <Link to="/blog" className="d-flex justify-content-end">
+                    Leia mais +
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <button
             className="carousel-control-prev anteriorBlog"
             type="button"
-            data-bs-target="#carouselBlog"
-            data-bs-slide="prev"
+            onClick={anteriorBlog}
           >
             <span>&lt;</span>
             <span className="visually-hidden">Anterior</span>
@@ -202,11 +290,10 @@ const Home = () => {
           <button
             className="carousel-control-next proximoBlog"
             type="button"
-            data-bs-target="#carouselBlog"
-            data-bs-slide="next"
+            onClick={proximoBlog}
           >
             <span>&gt;</span>
-            <span className="visually-hidden">Proximo</span>
+            <span className="visually-hidden">Próximo</span>
           </button>
         </div>
       </div>
