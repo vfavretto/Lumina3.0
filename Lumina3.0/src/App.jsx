@@ -9,6 +9,7 @@ import Blog from "./views/pages/blog.jsx";
 import Login from "./views/pages/login.jsx";
 import Footer from "./views/components/common/footer.jsx";
 import Profile from "./views/pages/profile.jsx";
+import Register from "./views/pages/register.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register/>} />
           <Route 
             path="/profile/:id" 
             element={
