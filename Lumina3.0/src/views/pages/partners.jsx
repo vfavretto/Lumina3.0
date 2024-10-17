@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "../../assets/styles/partners.css";
+import BotoesP from "../components/common/botoesP";
 
 const Partners = () => {
   const [ativo, setAtivo] = useState("EMPRESA");
@@ -17,36 +18,16 @@ const Partners = () => {
     ],
   };
 
-  const troca = (event) => {
-    setAtivo(event);
+  const troca = (novoAtivo) => {
+    setAtivo(novoAtivo);
   };
 
   return (
     <div className="body overflow-hidden">
       <div className="paginaParceiros">
-        <div className="botoesPrincipais">
-          <div className="arrumarBotoes">
-            <div className="botaoContainer">
-              <div
-                className={`botaoAnimado ${ativo === "EMPRESA" ? "posEmpresa" : "posFornecedor"}`}
-              />
-                <button
-                  onClick={() => troca("EMPRESA")}
-                  className={`botao ${ativo === "EMPRESA" ? "ativo" : ""}`}
-                >
-                  Empresa
-                </button>
-                <button
-                  onClick={() => troca("FORNECEDOR")}
-                  className={`botao ${ativo === "FORNECEDOR" ? "ativo" : ""}`}
-                >
-                  Fornecedor
-                </button>
-
-            </div>
-          </div>
+        <div className="botoesDiv">
+        <BotoesP ativo={ativo} troca={troca} />
         </div>
-
         <div className="buscarEmpresa">
           <form role="search">
             <input

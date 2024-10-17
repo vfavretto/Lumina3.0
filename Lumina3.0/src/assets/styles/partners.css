@@ -77,51 +77,7 @@
   margin-bottom: 20px;
 }
 
-.botoesPrincipais {
-  display: flex;
-  justify-content: center;
-  margin: 5% 0 3% 0;
-}
 
-.arrumarBotoes {
-  background-color: #626262;
-  width: auto;
-  min-width: 52%;
-  max-width: 90%;
-  margin: 0 auto;
-  display: flex;
-  border-radius: 100px;
-  justify-content: center;
-  z-index: 0;
-  position: relative;
-}
-
-.botaoContainer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-}
-
-.botoesPrincipais button {
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 26px;
-  font-style: normal;
-  text-transform: capitalize;
-  font-weight: 700;
-  padding: 7% 50%;
-  border-radius: 65px;
-  border: none;
-  cursor: pointer;
-  flex: 1;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.botoesPrincipais button:hover {
-  color: #ffffff;
-  /* background-color: rgba(0, 0, 0, 0.2); */
-}
 
 .empresas {
   background-image: url(.././images/parceiros/fundo.png);
@@ -180,47 +136,13 @@
   transform: scale(1.05);
 }
 
-.botaoAnimado {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    40deg,
-    #2fac66,
-    #2b4b5f 25%,
-    #292b5d 36%,
-    #29235c 65%,
-    #2a375d 73%,
-    #2fac66
-  );
-  border-radius: 65px;
-  transition: transform 0.3s ease;
-  z-index: 0;
+.botoesDiv {
+  margin: 5% 0 3%;
 }
 
-.posEmpresa {
-  transform: translateX(0);
-}
 
-.posFornecedor {
-  transform: translateX(100%);
-}
 
-.botao {
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 26px;
-  font-style: normal;
-  text-transform: capitalize;
-  font-weight: 700;
-  padding: 7% 50%;
-  border-radius: 65px;
-  border: none;
-  cursor: pointer;
-  flex: 1;
-  transition: color 0.3s, background-color 0.3s;
-  position: relative;
-  z-index: 2;
-}
+
+
+
+
