@@ -7,6 +7,59 @@
   padding: 0 8%;
 }
 
+/* BotoesP styles */
+.botoesPrincipais {
+  background-color: #333;
+  border-radius: 25px;
+  padding: 5px;
+  position: relative;
+  margin-bottom: 3%;
+  margin-top: 5%;
+}
+
+.botaoContainer {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+}
+
+.botao {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.botaoAnimado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(40deg,
+  #2fac66,
+  #2b4b5f 25%,
+  #292b5d 36%,
+  #29235c 65%,
+  #2a375d 73%,
+  #2fac66);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.posEmpresa {
+  transform: translateX(0);
+}
+
+.posFornecedor {
+  transform: translateX(100%);
+}
+
+/* Existing Partners styles */
 .textoParceiros {
   width: 100%;
 }
@@ -77,8 +130,6 @@
   margin-bottom: 20px;
 }
 
-
-
 .empresas {
   background-image: url(.././images/parceiros/fundo.png);
   padding: 5%;
@@ -88,7 +139,6 @@
 
 .listaEmpresas {
   border-radius: 20px;
-  /* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .imgParceiros {
@@ -139,10 +189,3 @@
 .botoesDiv {
   margin: 5% 0 3%;
 }
-
-
-
-
-
-
-
