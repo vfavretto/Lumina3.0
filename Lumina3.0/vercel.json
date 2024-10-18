@@ -7,6 +7,14 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    },
+    {
+      "env": {
+        "VITE_API_URL": "https://lumina3-0.vercel.app",
+        "FRONTEND_URL": "https://lumina3-0.vercel.app"
+      }
     }
   ]
+  
 }
+
