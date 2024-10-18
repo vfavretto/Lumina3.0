@@ -7,8 +7,9 @@
 
 <p align="center">
     <a href="#sobre">Sobre</a>  |  
-    <a href="#mer">MER e Collections</a>  |  
-    <a href="#prototipos">Protótipos</a>  |  
+    <a href="#backlog">Backlog & User Stories</a>  |  
+    <a href="#mer">MER & Collections</a>  |  
+    <a href="#prototipos">Protótipos & Documentação</a>  |  
     <a href="#tecnologias">Tecnologias</a>  |  
     <a href="#equipe">Equipe</a>
 </p>
@@ -16,11 +17,19 @@
 <span id="sobre">
   
 ## :page_facing_up: Sobre o Projeto
-Projeto de plataforma digital que integra empresas que oferecem serviços a cerca da sustentabilidade, empresas que fornecem serviços encontram empresas que precisam dos seviços podendo se contatar. A inclusão de governos e ONGs como partes interessadas amplia o alcance do projeto, transformando-o em um hub abrangente para diversos setores comprometidos com a sustentabilidade. Essa abordagem holística  reflete a ambição do projeto em catalisar não apenas a mudança no âmbito empresarial, mas também influenciar políticas públicas e iniciativas sociais em prol de um futuro mais sustentável. O Lumina não apenas compartilha conhecimento, mas aspira a ser um catalisador para transformações positivas em escala global, unindo diversos agentes para enfrentar os desafios contemporâneos de maneira colaborativa.
+  Projeto de plataforma digital que integra empresas que oferecem serviços a cerca da sustentabilidade, empresas que fornecem serviços encontram empresas que precisam dos seviços podendo se contatar. A inclusão de governos e ONGs como partes interessadas amplia o alcance do projeto, transformando-o em um hub abrangente para diversos setores comprometidos com a sustentabilidade. Essa abordagem holística  reflete a ambição do projeto em catalisar não apenas a mudança no âmbito empresarial, mas também influenciar políticas públicas e iniciativas sociais em prol de um futuro mais sustentável. O Lumina não apenas compartilha conhecimento, mas aspira a ser um catalisador para transformações positivas em escala global, unindo diversos agentes para enfrentar os desafios contemporâneos de maneira colaborativa.
+
+→ [Voltar ao topo](#topo)
+
+<span id="backlog">
+  
+## :dart: Backlog e User Stories
+
+→ [Voltar ao topo](#topo)
 
 <span id="mer">
   
-## MER e Collections
+## :bookmark_tabs: MER e Collections
 MER
 ![MER](https://i.imgur.com/FSLNTdy.png)
 Collections
@@ -28,12 +37,22 @@ Collections
 ![COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
 ![COLLETION ADM](https://i.imgur.com/R8q5qvu.png)
 
+→ [Voltar ao topo](#topo)
+
 <span id="prototipos">
 
-## 💻 Protótipos
+## 💻 Protótipos e Documentação
+  No planejamento do projeto, foram criados wireframes e mockups para a idealização do layout da interface. Após a validação pelo cliente, esses elementos foram implementados em um protótipo desenvolvido em React, permitindo a interação do usuário com a interface.
+  
+  Adotou-se uma arquitetura orientada a microsserviços, que promove a descentralização e o isolamento de responsabilidades entre o front-end e o back-end. Essa abordagem garantiu que as funcionalidades fossem integradas de maneira eficiente por meio do consumo das APIs disponíveis. A documentação dos microsserviços, um requisito não funcional essencial para o projeto, foi realizada ao longo de todo o desenvolvimento utilizando ferramentas como Swagger e readmes nos repositórios, mapeando detalhadamente os endpoints de cada API.
+  
+  Além disso, outras documentações, como fluxos de dados, diagramas de classe e de uso, modelagem do banco de dados e arquitetura do sistema, foram organizadas e compiladas em um PDF.
+
 Protótipo de Baixa Fidelidade
 ![Protótipo baixa fidelidade](https://imgur.com/KiKMx8i.png)
 ![Protótipo baixa fidelidade](https://imgur.com/7bkj4Px.png)
+
+→ [Voltar ao topo](#topo)
 
 <span id="tecnologias">
 
@@ -45,6 +64,8 @@ Protótipo de Baixa Fidelidade
 | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white) |
 | 	![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) | 	![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) |
 |   ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)   | ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) |
+
+→ [Voltar ao topo](#topo)
 
 <span id="equipe">
 

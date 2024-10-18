@@ -1,101 +1,142 @@
-import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/authContext';
-import "../../assets/styles/login.css";
-
+import React from 'react';
+import { Link } from "react-router-dom";
+import "../../assets/styles/register.css";
+ 
 const Register = () => {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const { handleRegister } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const onRegister = async (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("As senhas não coincidem!");
-      return;
-    }
-    try {
-      await handleRegister(fullName, email, password);
-      navigate('/dashboard');
-    } catch (error) {
-      console.error('Erro no registro:', error);
-      alert("Erro no registro!");
-    }
-  };
-
   return (
-    <div className="col zikaMargem">
-      <div className="justify-content-end formsCadastro">
-        <div className="formularioCadastro">
-          <div className="textCadastro">
-            <h3 className="d-flex text-white">CADASTRE-SE AQUI</h3>
-          </div>
-          <form onSubmit={onRegister}>
-            <div className="col-md-12 inputCadastro">
-              <div className="row mb-3">
-                <label className="col-sm-2 col-form-label"></label>
-                <div className="col-sm-8">
-                  <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="🌐Nome Completo"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="row mb-3">
-                <label className="col-sm-2 col-form-label"></label>
-                <div className="col-sm-8">
-                  <input 
-                    type="email" 
-                    className="form-control" 
-                    placeholder="✉️Digite seu email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="row mb-3">
-                <label className="col-sm-2 col-form-label"></label>
-                <div className="col-sm-8">
-                  <input 
-                    type="password" 
-                    className="form-control" 
-                    placeholder="🔑Digite uma senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="row mb-3">
-                <label className="col-sm-2 col-form-label"></label>
-                <div className="col-sm-8">
-                  <input 
-                    type="password" 
-                    className="form-control" 
-                    placeholder="🗝️Confirme sua senha"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="row justify-content-center">
-                <button type="submit" className="btn btn-success col-sm-5">Cadastrar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
+<main className="profile-page">
+<div className="container">
+<h1>Complete Seu Perfil</h1>
+<form>
+<section className="representative-info">
 
+<h2>Cadastro Representante</h2>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="text" placeholder="Nome" />
+    </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="email" placeholder="E-mail" />
+    </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="tel" placeholder="Telefone" />    </div>
+    <div class="col">
+    <input type="text" placeholder="CPF" />    </div>
+  </div>
+  </div>
+
+</section>
+ 
+          <section className="company-info">
+<h2>Cadastro Empresa</h2>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="text" placeholder="Nome" />    </div>
+    <div class="col-md-3">
+    <select>
+<option value="">Empresa</option>
+<option value="">Fornecedor</option>
+<option value="">Ambos</option>
+                {}
+</select>  </div>
+  </div>
+  </div>
+
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="email" placeholder="E-mail Empresa" />
+    </div>
+    <div class="col">
+    <input type="url" placeholder="Site" />
+    </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="tel" placeholder="Telefone" />
+    </div>
+    <div class="col">
+    <input type="text" placeholder="CNPJ" />
+    </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="text" placeholder="Endereço Comercial" />
+    </div>
+    <div class="col-md-3">
+    <input type="text" placeholder="CEP" />
+    </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <input type="text" placeholder="Cidade" />
+    </div>
+    <div class="col">
+    <input type="text" placeholder="UF" />
+    </div>
+    <div class="col">
+    <input type="text" placeholder="País" />
+    </div>
+    </div>
+  </div>
+  <div class="container text-center">
+<textarea placeholder="Descrição Empresa"></textarea>
+</div>
+
+</section>
+ 
+          <section className="social-media">
+<h2>Redes Sociais</h2>
+
+<div class="container text-center" className="formRedes">
+  <div class="row align-items-start" >
+    <div class="col">
+    <input type="url" placeholder="LinkedIn" />
+    </div>
+    <div class="col">
+    <input type="url" placeholder="Instagram"  />
+    </div>
+    <div class="col">
+    <input type="url" placeholder="Facebook" />
+    </div>
+  </div>
+  </div>
+
+
+
+</section>
+ <div className='saveButton'>
+
+ <button type="submit" className="save-button">SALVAR</button>
+
+ </div>
+ 
+</form>
+</div>
+</main>
+  );
+};
+ 
 export default Register;
