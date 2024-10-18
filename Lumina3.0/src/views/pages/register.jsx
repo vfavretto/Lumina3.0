@@ -1,7 +1,5 @@
-import React from 'react';
-import { Link } from "react-router-dom";
 import "../../assets/styles/register.css";
- 
+
 const Register = () => {
   return (
 <main className="profile-page">
@@ -53,6 +51,16 @@ const Register = () => {
   </div>
   </div>
 
+            <div class="container text-center">
+              <div class="row align-items-start">
+                <div class="col">
+                  <input type="email" placeholder="E-mail Empresa" />
+                </div>
+                <div class="col">
+                  <input type="url" placeholder="Site" />
+                </div>
+              </div>
+            </div>
 
   <div className="container text-center">
   <div className="row align-items-start">
@@ -137,5 +145,5 @@ const Register = () => {
 </main>
   );
 };
- 
+
 export default Register;
