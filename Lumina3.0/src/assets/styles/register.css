@@ -33,7 +33,7 @@ body {
     border-radius: 8px;
   }
    
-  input, select, textarea {
+  .profile-page input, .profile-page select, .profile-page textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -43,23 +43,24 @@ body {
     color: #ffffff;
   }
    
-  input::placeholder, select::placeholder, textarea::placeholder {
+  .profile-page input::placeholder, .profile-page select::placeholder, .profile-page textarea::placeholder {
     color: #999999;
   }
    
-  .row {
+  .profile-page .row {
     display: flex;
     gap: 15px;
   }
    
-  .row input, .row select {
+  .profile-page .row input, .profile-page .row select {
     flex: 1;
   }
    
-  textarea {
+  .profile-page textarea {
     height: 100px;
     resize: vertical;
   }
+
 .saveButton{
     display: flex;
     justify-content: space-evenly
