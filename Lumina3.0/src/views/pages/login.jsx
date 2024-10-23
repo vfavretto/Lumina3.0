@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
@@ -11,34 +11,16 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [alert, setAlert] = useState({ show: false, type: '', message: '' });
   const { handleLogin, handleRegister, error } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const showAlert = (type, message) => {
-    setAlert({
-      show: true,
-      type,
-      message,
-    });
-    // Hide alert after 5 seconds
-    setTimeout(() => {
-      setAlert((prev) => ({ ...prev, show: false }));
-    }, 5000);
-  };
 
   const onLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await handleLogin(userName, password);
       const userId = response.user._id;
-      showAlert("success", "Login realizado com sucesso! Redirecionando...");
-      // Delay navigation to show the success message
-      setTimeout(() => {
-        navigate(`/profile/${userId}`);
-      }, 1500);
+      navigate(`/profile/${userId}`);
     } catch (error) {
-      showAlert("error", "Erro: Usuário ou senha incorretos");
       console.error("Erro no login:", error);
     }
   };
@@ -46,34 +28,19 @@ const Login = () => {
   const onRegister = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      showAlert("error", "As senhas não coincidem!");
+      alert("As senhas não coincidem!");
       return;
     }
     try {
       await handleRegister(fullName, email, password);
-      showAlert("success", "Cadastro realizado com sucesso! Redirecionando...");
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+      navigate("/login");
     } catch (error) {
-      showAlert("error", "Erro ao realizar cadastro. Tente novamente.");
       console.error("Erro no registro:", error);
     }
   };
 
   return (
     <div className="body">
-       {alert.show && (
-        <div className={`alert-container ${alert.type === 'success' ? 'alert-success' : 'alert-error'}`}>
-          <p className="alert-message">{alert.message}</p>
-          <button
-            className="alert-close-button"
-            onClick={() => setAlert(prev => ({ ...prev, show: false }))}
-          >
-            ×
-          </button>
-        </div>
-      )}
       <div className="divMae container-fluid">
         <div className="fundinRegistro row">
           <div className="col divDireita">
