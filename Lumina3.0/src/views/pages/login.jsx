@@ -1,8 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import "../../assets/styles/login.css";
 import imgbar from "../../assets/images/Perfil/mensagensPerfil.png";
 
@@ -12,20 +11,19 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [alert, setAlert] = useState({ show: false, type: '', title: '', message: '' });
+  const [alert, setAlert] = useState({ show: false, type: '', message: '' });
   const { handleLogin, handleRegister, error } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const showAlert = (type, title, message) => {
+  const showAlert = (type, message) => {
     setAlert({
       show: true,
       type,
-      title,
-      message
+      message,
     });
     // Hide alert after 5 seconds
     setTimeout(() => {
-      setAlert(prev => ({ ...prev, show: false }));
+      setAlert((prev) => ({ ...prev, show: false }));
     }, 5000);
   };
 
@@ -34,13 +32,13 @@ const Login = () => {
     try {
       const response = await handleLogin(userName, password);
       const userId = response.user._id;
-      showAlert('success', 'Login Bem-sucedido', 'Você será redirecionado para seu perfil.');
+      showAlert("success", "Login realizado com sucesso! Redirecionando...");
       // Delay navigation to show the success message
       setTimeout(() => {
         navigate(`/profile/${userId}`);
       }, 1500);
     } catch (error) {
-      showAlert('destructive', 'Erro no Login', 'Usuário ou senha incorretos. Por favor, tente novamente.');
+      showAlert("error", "Erro: Usuário ou senha incorretos");
       console.error("Erro no login:", error);
     }
   };
@@ -48,45 +46,39 @@ const Login = () => {
   const onRegister = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      showAlert('destructive', 'Erro no Cadastro', 'As senhas não coincidem!');
+      showAlert("error", "As senhas não coincidem!");
       return;
     }
     try {
       await handleRegister(fullName, email, password);
-      showAlert('success', 'Cadastro Realizado', 'Sua conta foi criada com sucesso! Redirecionando para o login...');
+      showAlert("success", "Cadastro realizado com sucesso! Redirecionando...");
       setTimeout(() => {
         navigate("/login");
       }, 1500);
     } catch (error) {
-      showAlert('destructive', 'Erro no Cadastro', 'Não foi possível completar o cadastro. Por favor, tente novamente.');
+      showAlert("error", "Erro ao realizar cadastro. Tente novamente.");
       console.error("Erro no registro:", error);
     }
   };
 
   return (
     <div className="body">
+       {alert.show && (
+        <div className={`alert-container ${alert.type === 'success' ? 'alert-success' : 'alert-error'}`}>
+          <p className="alert-message">{alert.message}</p>
+          <button
+            className="alert-close-button"
+            onClick={() => setAlert(prev => ({ ...prev, show: false }))}
+          >
+            ×
+          </button>
+        </div>
+      )}
       <div className="divMae container-fluid">
-        {alert.show && (
-          <div className="fixed top-4 right-4 z-50 w-96">
-            <Alert 
-              variant={alert.type}
-              className={`mb-4 ${
-                alert.type === 'success' ? 'bg-green-100 border-green-500' :
-                'bg-red-100 border-red-500'
-              }`}
-            >
-              <AlertTitle className={
-                alert.type === 'success' ? 'text-green-800' : 'text-red-800'
-              }>{alert.title}</AlertTitle>
-              <AlertDescription className={
-                alert.type === 'success' ? 'text-green-600' : 'text-red-600'
-              }>{alert.message}</AlertDescription>
-            </Alert>
-          </div>
-        )}
         <div className="fundinRegistro row">
           <div className="col divDireita">
             <div className="justify-content-start bemVindo">
+              {error && <div className="alert alert-danger">{error}</div>}
               <div>
                 <h2 className="d-flex text-white welcome">BEM-VINDO!</h2>
               </div>
