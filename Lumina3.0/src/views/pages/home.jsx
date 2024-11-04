@@ -9,53 +9,87 @@ import imgBlog4 from "../../assets/images/blog/blog4.png";
 
 const Home = () => {
   const carouselBlogRef = useRef(null);
-  const [posicao, setPosicao] = useState(0);
-  const [tamanhoCard, setTamanhoCard] = useState(0);
-  const [numCardsVisible, setNumCardsVisible] = useState(3);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  const blogItems = [
+    {
+      img: imgBlog2,
+      title: "Cientistas Alcançam Novo Patamar na Computação Quântica1",
+    },
+    {
+      img: imgBlog3,
+      title: "Reciclagem de Eletrônicos: Conheça os benefícios dessa Nova Tecnologia2",
+    },
+    {
+      img: imgBlog4,
+      title: "Desenvolvedores criam código que Economiza nas impressões3",
+    },
+    {
+      img: imgBlog2,
+      title: "Cientistas Alcançam Novo Patamar na Computação Quântica4",
+    },
+    {
+      img: imgBlog3,
+      title: "Reciclagem de Eletrônicos: Conheça os benefícios dessa Nova Tecnologia5",
+    },
+    {
+      img: imgBlog4,
+      title: "Desenvolvedores criam código que Economiza nas impressões6",
+    },
+  ];
 
   useEffect(() => {
-    const updateCardSize = () => {
-      const card = carouselBlogRef.current.querySelector(".itemBlog");
-      if (card) {
-        setTamanhoCard(card.offsetWidth);
-      }
-      const width = window.innerWidth;
-      setNumCardsVisible(width < 768 ? 1 : 3);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
-    updateCardSize();
-    window.addEventListener("resize", updateCardSize);
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", updateCardSize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const proximoBlog = () => {
-    const maxScroll = (carouselBlogRef.current.scrollWidth - tamanhoCard);
-    if (posicao < maxScroll) {
-      setPosicao(prev => Math.min(prev + tamanhoCard, maxScroll));
+  const getVisibleItems = () => {
+    if (isMobile) {
+      return [blogItems[currentIndex]];
+    } else {
+      const itemsPerPage = 3;
+      const startIndex = currentIndex;
+      return blogItems.slice(startIndex, startIndex + itemsPerPage);
     }
   };
 
-  const anteriorBlog = () => {
-    if (posicao > 0) {
-      setPosicao(prev => Math.max(prev - tamanhoCard, 0));
+  const handleNext = () => {
+    const maxIndex = isMobile 
+      ? blogItems.length - 1 
+      : blogItems.length - 3;
+    
+    if (currentIndex < maxIndex) {
+      setCurrentIndex(prev => prev + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
     }
   };
 
   useEffect(() => {
     if (carouselBlogRef.current) {
       carouselBlogRef.current.scrollTo({
-        left: posicao,
+        left: currentIndex,
         behavior: "smooth"
       });
     }
-  }, [posicao]);
-
+  }, [currentIndex]);
+  
   return (
     <main className="body">
-      <div id="circulo" className="carousel slide slideInicio">
+     <div id="circulo" className="carousel slide slideInicio">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -186,103 +220,34 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      
       <div className="homeBlog w-100 pb-5">
         <h1 className="text-center">Blog</h1>
         <div id="carouselBlog" className="carousel">
           <div className="carousel-inner carouselBlog" ref={carouselBlogRef}>
-            {/* Blog Item 1 */}
-            <div className="carousel-item active itemBlog">
-              <div className="card">
-                <img src={imgBlog2} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Cientistas Alcançam Novo Patamar na Computação Quântica
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
+            {getVisibleItems().map((item, index) => (
+              <div 
+                key={`${index}-${currentIndex}`} 
+                className={`carousel-item ${index === 0 ? 'active' : ''} itemBlog`}
+              >
+                <div className="card">
+                  <img src={item.img} className="d-block imgBlog" alt="..." />
+                  <div className="card-body">
+                    <p className="card-text">{item.title}</p>
+                    <Link to="/blog" className="d-flex justify-content-end">
+                      Leia mais +
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* Blog Item 2 */}
-            <div className="carousel-item itemBlog">
-              <div className="card">
-                <img src={imgBlog3} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Reciclagem de Eletrônicos: Conheça os benefícios dessa Nova
-                    Tecnologia
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* Blog Item 3 */}
-            <div className="carousel-item itemBlog">
-              <div className="card">
-                <img src={imgBlog4} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Desenvolvedores criam código que Economiza nas impressões
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* Blog Item 4 */}
-            <div className="carousel-item active itemBlog">
-              <div className="card">
-                <img src={imgBlog2} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Cientistas Alcançam Novo Patamar na Computação Quântica
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* Blog Item 5 */}
-            <div className="carousel-item itemBlog">
-              <div className="card">
-                <img src={imgBlog3} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Reciclagem de Eletrônicos: Conheça os benefícios dessa Nova
-                    Tecnologia
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* Blog Item 6 */}
-            <div className="carousel-item itemBlog">
-              <div className="card">
-                <img src={imgBlog4} className="d-block imgBlog" alt="..." />
-                <div className="card-body">
-                  <p className="card-text">
-                    Desenvolvedores criam código que Economiza nas impressões
-                  </p>
-                  <Link to="/blog" className="d-flex justify-content-end">
-                    Leia mais +
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <button
             className="carousel-control-prev anteriorBlog"
             type="button"
-            onClick={anteriorBlog}
+            onClick={handlePrevious}
+            disabled={currentIndex === 0}
           >
             <span>&lt;</span>
             <span className="visually-hidden">Anterior</span>
@@ -290,7 +255,8 @@ const Home = () => {
           <button
             className="carousel-control-next proximoBlog"
             type="button"
-            onClick={proximoBlog}
+            onClick={handleNext}
+            disabled={currentIndex === (isMobile ? blogItems.length - 1 : blogItems.length - 3)}
           >
             <span>&gt;</span>
             <span className="visually-hidden">Próximo</span>
