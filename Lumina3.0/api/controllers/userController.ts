@@ -1,13 +1,46 @@
-import User from "../models/userModel.js";
+import { Request, Response } from "express";
+import User, { IUser } from "../models/userModel";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { Request, Response} from "express";
 
-const JWT_SECRET = process.env.JWT_SECRET;
+interface RegisterRequest extends Request {
+  body: {
+    fullName: string;
+    email: string;
+    password: string;
+  };
+}
+
+interface LoginRequest extends Request {
+  body: {
+    email: string;
+    password: string;
+  };
+}
+
+interface AuthRequest extends Request {
+  headers: {
+    authorization?: string;
+  };
+}
+
+interface UpdateRequest extends Request {
+  params: {
+    id: string;
+  };
+  body: Partial<IUser>;
+}
+
+interface UserParams extends Request {
+  params: {
+    id: string;
+  };
+}
 
 class UserController {
-  async register(req: Request, res: Response) {
+  async register(req: RegisterRequest, res: Response): Promise<Response> {
     const { fullName, email, password } = req.body;
+
     try {
       const existingUser = await User.findOne({ email });
       if (existingUser) {
@@ -17,17 +50,24 @@ class UserController {
       const hashedPassword = await bcrypt.hash(password, 10);
       const user = new User({ fullName, email, password: hashedPassword });
       await user.save();
-      const token = jwt.sign({ userId: user._id }, JWT_SECRET as any, {
-        expiresIn: "1h",
-      });
+
+      const token = jwt.sign(
+        { userId: user._id },
+        process.env.JWT_SECRET as string,
+        {
+          expiresIn: "1h",
+        }
+      );
+
       return res.status(201).json({ user, token });
     } catch (error) {
-      return res.status(500).json({ error: error.message });
+      return res.status(500).json({ error: (error as Error).message });
     }
   }
 
-  async login(req: Request, res: Response) {
+  async login(req: LoginRequest, res: Response): Promise<Response> {
     const { email, password } = req.body;
+
     try {
       const user = await User.findOne({ email });
       if (!user) {
@@ -39,24 +79,32 @@ class UserController {
         return res.status(401).json({ error: "Invalid password" });
       }
 
-      const token = jwt.sign({ userId: user._id }, JWT_SECRET as any, {
-        expiresIn: "1h",
-      });
+      const token = jwt.sign(
+        { userId: user._id },
+        process.env.JWT_SECRET as string,
+        {
+          expiresIn: "1h",
+        }
+      );
+
       return res.status(200).json({ user, token });
     } catch (error) {
-      return res.status(500).json({ error: error.message });
+      return res.status(500).json({ error: (error as Error).message });
     }
   }
 
-  async checkAuth(req, res) {
-    const token = req.headers["authorization"]?.split(" ")[1];
+  async checkAuth(req: AuthRequest, res: Response): Promise<Response> {
+    const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       return res.status(401).json({ error: "No token provided" });
     }
 
     try {
-      const decoded = jwt.verify(token, JWT_SECRET as any);
+      const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as {
+        userId: string;
+      };
       const user = await User.findById(decoded.userId);
+
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
@@ -67,7 +115,7 @@ class UserController {
     }
   }
 
-  async getUser(req, res) {
+  async getUser(req: UserParams, res: Response): Promise<Response> {
     const { id } = req.params;
 
     try {
@@ -84,7 +132,7 @@ class UserController {
     }
   }
 
-  async updateUser(req, res) {
+  async updateUser(req: UpdateRequest, res: Response): Promise<Response> {
     const { id } = req.params;
     const updates = req.body;
 
@@ -104,7 +152,7 @@ class UserController {
     }
   }
 
-  async deleteUser(req, res) {
+  async deleteUser(req: UserParams, res: Response): Promise<Response> {
     const { id } = req.params;
 
     try {
