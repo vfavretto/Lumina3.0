@@ -17,9 +17,10 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogin = async (email, password) => {
+    console.log(`${import.meta.env.VITE_API_URL}/api/auth/login`);
     try {
       const response = await axios.post(
-        "https://lumina-nine-plum.vercel.app/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password }
       );
       localStorage.setItem("token", response.data.token);
@@ -43,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   const handleRegister = async (fullName, email, password) => {
     try {
       const response = await axios.post(
-        "https://lumina-nine-plum.vercel.app/api/auth/register",
+        `${import.meta.env.VITE_API_URL}api/auth/register`,
         {
           fullName,
           email,
