@@ -38,7 +38,7 @@ interface UserParams extends Request {
 }
 
 
-export const register = async (req: RegisterRequest, res: Response): Promise<void> {
+export const register = async (req: RegisterRequest, res: Response): Promise<void> => {
     const { fullName, email, password } = req.body;
 
     try {
@@ -65,7 +65,7 @@ export const register = async (req: RegisterRequest, res: Response): Promise<voi
     }
   }
 
-  export const login = async(req: LoginRequest, res: Response): Promise<void> {
+  export const login = async(req: LoginRequest, res: Response): Promise<void> => {
     const { email, password } = req.body;
 
     try {
@@ -94,7 +94,7 @@ export const register = async (req: RegisterRequest, res: Response): Promise<voi
     }
   }
 
-  export const checkAuth = async(req: AuthRequest, res: Response): Promise<void> {
+  export const checkAuth = async(req: AuthRequest, res: Response): Promise<void> => {
     const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
       res.status(401).json({ error: "No token provided" });
@@ -117,7 +117,7 @@ export const register = async (req: RegisterRequest, res: Response): Promise<voi
     }
   }
 
-  export const getUser = async (req: UserParams, res: Response): Promise<void> {
+  export const getUser = async (req: UserParams, res: Response): Promise<void> => {
     const { id } = req.params;
 
     try {
@@ -134,7 +134,7 @@ export const register = async (req: RegisterRequest, res: Response): Promise<voi
     }
   }
 
-  export const updateUser = async (req: UpdateRequest, res: Response): Promise<void> {
+  export const updateUser = async (req: UpdateRequest, res: Response): Promise<void> => {
     const { id } = req.params;
     const updates = req.body;
 
@@ -154,7 +154,7 @@ export const register = async (req: RegisterRequest, res: Response): Promise<voi
     }
   }
 
-  export const deleteUser = async (req: UserParams, res: Response): Promise<void> {
+  export const deleteUser = async (req: UserParams, res: Response): Promise<void> => {
     const { id } = req.params;
 
     try {
