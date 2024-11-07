@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const mongoURI = process.env.MONGODB_URI as string | undefined;
 
 const connectDB = async () => {
+  const mongoURI = process.env.MONGODB_URI as string | undefined;
   if (!mongoURI) {
     console.error('MONGODB_URI is not defined');
     process.exit(1);
