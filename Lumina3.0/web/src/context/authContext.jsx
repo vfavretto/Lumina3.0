@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [error, setError] = useState(null);
+  const backend = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -17,7 +18,6 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogin = async (email, password) => {
-    const backend = import.meta.env.BACKEND_URL;
     console.log(`${backend}/api/auth/login`);
     try {
       const response = await axios.post(
@@ -44,6 +44,7 @@ export const AuthProvider = ({ children }) => {
 
   const handleRegister = async (fullName, email, password) => {
     try {
+      console.log(`${backend}api/auth/register`)
       const response = await axios.post(
         `${backend}api/auth/register`,
         {

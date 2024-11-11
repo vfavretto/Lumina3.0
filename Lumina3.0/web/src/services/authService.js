@@ -1,8 +1,6 @@
-/* eslint-disable no-useless-catch */
 import axios from 'axios';
-import dotenv from 'dotenv';
 
-const API_URL = process.env.FRONTEND_URL;
+const API_URL = process.env.VITE_FRONTEND_URL;
 
 const setToken = (token) => {
   localStorage.setItem('token', token);
