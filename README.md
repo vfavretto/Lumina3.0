@@ -25,6 +25,7 @@
   
 ## :dart: Backlog e User Stories
 ![userstories](https://i.imgur.com/filHyZW.png)
+![backlog](https://i.imgur.com/anMBNTF.png)
 
 → [Voltar ao topo](#topo)
 
