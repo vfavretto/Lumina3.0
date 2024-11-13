@@ -8,12 +8,12 @@ import foto1 from "../../assets/images/Perfil/foto1.png";
 import foto2 from "../../assets/images/Perfil/foto2.png";
 
 const Profile = () => {
-  const api_url = import.meta.VITE_API_URL;
+  const api_url = import.meta.env.VITE_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
