@@ -51,7 +51,8 @@ Collections
 
 Protótipo de Baixa Fidelidade
 ![Protótipo alta fidelidade](https://i.imgur.com/Q3AjUW8.png)
-![Link figma](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1)
+<p/>
+[Link figma](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1)
 
 → [Voltar ao topo](#topo)
 
