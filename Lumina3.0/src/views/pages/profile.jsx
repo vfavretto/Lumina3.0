@@ -8,6 +8,7 @@ import foto1 from "../../assets/images/Perfil/foto1.png";
 import foto2 from "../../assets/images/Perfil/foto2.png";
 
 const Profile = () => {
+  const api_url = import.meta.VITE_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
@@ -16,7 +17,7 @@ const Profile = () => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/check`, {
+        await axios.get(`${api_url}/api/auth/check`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -28,7 +29,7 @@ const Profile = () => {
     };
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/user/${id}`, {
+        const response = await axios.get(`${api_url}/api/auth/user/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
