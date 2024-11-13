@@ -36,13 +36,13 @@
 
 Acesse o [MER](https://i.imgur.com/FSLNTdy.png)
 
-Collections:
+Acesse nossas collections:
 
-[COLLECTIONS GERAIS](https://i.imgur.com/oxN61W7.png)
+-[COLLECTION GERAL](https://i.imgur.com/oxN61W7.png)
 
-[COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
+-[COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
 
-[COLLETION ADM](https://i.imgur.com/R8q5qvu.png)
+-[COLLECTION ADM](https://i.imgur.com/R8q5qvu.png)
 
 
 
