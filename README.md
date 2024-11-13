@@ -49,10 +49,11 @@ Collections
   
   Além disso, outras documentações, como fluxos de dados, diagramas de classe e de uso, modelagem do banco de dados e arquitetura do sistema, foram organizadas e compiladas em um PDF.
 
-Protótipo de Baixa Fidelidade
+##Protótipo de Alta Fidelidade
+
 ![Protótipo alta fidelidade](https://i.imgur.com/Q3AjUW8.png)
-<p/>
-[Link figma](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1)
+
+O Site foi construido usando o [Figma]([https://pages.github.com/](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1))
 
 → [Voltar ao topo](#topo)
 
