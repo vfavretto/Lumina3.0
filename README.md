@@ -33,12 +33,18 @@
 <span id="mer">
   
 ## :bookmark_tabs: MER e Collections
-MER
-![MER](https://i.imgur.com/FSLNTdy.png)
-Collections
-![COLLECTIONS](https://i.imgur.com/oxN61W7.png)
-![COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
-![COLLETION ADM](https://i.imgur.com/R8q5qvu.png)
+
+Acesse o [MER](https://i.imgur.com/FSLNTdy.png)
+
+Collections:
+
+[COLLECTIONS GERAIS](https://i.imgur.com/oxN61W7.png)
+
+[COLLECTION SERVICO](https://i.imgur.com/ri2PXKC.png)
+
+[COLLETION ADM](https://i.imgur.com/R8q5qvu.png)
+
+
 
 → [Voltar ao topo](#topo)
 
