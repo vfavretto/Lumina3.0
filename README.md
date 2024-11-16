@@ -19,6 +19,107 @@
 ## :page_facing_up: Sobre o Projeto
   Projeto de plataforma digital que integra empresas que oferecem serviços a cerca da sustentabilidade, empresas que fornecem serviços encontram empresas que precisam dos seviços podendo se contatar. A inclusão de governos e ONGs como partes interessadas amplia o alcance do projeto, transformando-o em um hub abrangente para diversos setores comprometidos com a sustentabilidade. Essa abordagem holística  reflete a ambição do projeto em catalisar não apenas a mudança no âmbito empresarial, mas também influenciar políticas públicas e iniciativas sociais em prol de um futuro mais sustentável. O Lumina não apenas compartilha conhecimento, mas aspira a ser um catalisador para transformações positivas em escala global, unindo diversos agentes para enfrentar os desafios contemporâneos de maneira colaborativa.
 
+> _Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados_
+
+### :link: Projeto disponível para visualização em [Lumina](lumina3-0.vercel.app/)
+
+## 🏁 Entregas de Sprints
+
+| Sprint | Previsão | Status |
+|:--:|:----------:|:----------------:|
+| 01 | 30/08/2024 |  Concluída  ✔️  | 
+| 02 | 05/10/2024 |  Concluída  ✔️  | 
+| 03 | 04/11/2024 |  Concluída  ✔️  | 
+| 04 | 30/11/2024 |      | 
+
+
+## :pushpin: **Sprint 01: Preparação e Fundamentos**
+ 
+**Objetivo:** 
+Estabelecer a base do projeto com tecnologias principais, estrutura de dados, e protótipo inicial.
+ 
+Migração das Páginas de Angular para React:
+- Criação do esqueleto básico do projeto em React.
+- Conversão dos componentes do Angular para React.
+- Implementação do header, footer e navegação inicial.
+ 
+Estruturação do Banco de Dados:
+- Definição do modelo lógico do banco de dados.
+- Criação do MER (Modelo Entidade-Relacionamento).
+- Configuração do MongoDB e criação das coleções principais.
+ 
+Avaliação de Protótipo de Alta Fidelidade:
+- Ajustes necessários do protótipo no Figma.
+ 
+Arquitetura MVC:
+- Implementação da estrutura base seguindo o padrão MVC.
+- Configuração do servidor com rotas iniciais.
+ 
+Implementação de Microsserviço:
+- Planejamento de um microsserviço que será integrado ao sistema.
+- Configuração inicial do microsserviço.
+
+ 
+## :pushpin: **Sprint 02: Funcionalidades de Usuário**
+
+**Objetivo:** 
+Implementar funcionalidades essenciais para o cadastro e autenticação.
+
+Implementação da Página de Cadastro:
+- Criação de formulário funcional com validação de dados.
+
+Aplicação do Login Social:
+- Integração com APIs de autenticação.
+- Implementação de tokens de autenticação.
+
+Documentação da API via Swagger:
+- Criação da documentação inicial da API REST.
+- Testes das rotas principais para garantir integridade e clareza.
+
+Testes Unitários:
+- Implementação de testes unitários com Jest.
+
+
+## :pushpin: **Sprint 03: Melhorias e Ampliação**
+
+**Objetivo:** 
+Refinar as funcionalidades existentes e expandir o sistema com mais interatividade.
+
+Implementação da Página de Edição de Perfil:
+- Adicionar funcionalidade para alterar dados do perfil.
+  
+Refatoração da Página de Parceiros:
+- Conversão para React.
+- Implementação de lógica para busca e filtros.
+  
+Criação do Diagrama UML de Classes:
+- Documentação completa do relacionamento entre classes.
+- Inclusão das classes de acesso ao banco de dados.
+  
+Avaliação Heurística da Página:
+- Revisão detalhada da usabilidade e acessibilidade da aplicação.
+
+## :pushpin: **Sprint 04: Finalização e Entrega**
+
+**Objetivo:** 
+Concluir o projeto com todas as funcionalidades integradas e a documentação completa.
+
+Implementação da Página de Blog:
+- Criação de interface para leitura e postagem de notícias.
+  
+Criação do Chat:
+- Configuração de comunicação.
+
+Documentação Completa do Projeto:
+- Organização de toda a documentação no GitHub.
+
+Apresentação:
+- Preparação da apresentação do projeto integrador.
+- Demonstração das principais funcionalidades e arquitetura do sistema.
+
+
+#### Detalhamento de Sprints disponível no [Jira](https://julinhasoares.atlassian.net/)
+
 → [Voltar ao topo](#topo)
 
 <span id="backlog">
@@ -61,7 +162,7 @@ Acesse nossas collections:
 
 ![Protótipo alta fidelidade](https://i.imgur.com/Q3AjUW8.png)
 
-O Protótipo foi construido usando o [Figma](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1)
+#### O Protótipo foi construido usando o [Figma](https://www.figma.com/proto/s7gklcQtZwSzvlw5APOJWC/Lumina?node-id=0-1&t=dWRO7ttmqv7WQjlz-1)
 
 → [Voltar ao topo](#topo)
 
@@ -86,7 +187,7 @@ O Protótipo foi construido usando o [Figma](https://www.figma.com/proto/s7gklcQ
 | :-----------: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Scrum Master | Victor Favretto           |     [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](-) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://www.github.com/vfavretto)              |
 | Product Owner  | Júlia Soares |      [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/julia-soares/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://www.github.com/julinhaarte)     |
-|   Dev Team    | Ana Laura Lazdenas               |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](x) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ablazd)        |
+|   Dev Team    | Ana Laura Lazdenas               |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ana-lazdenas/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/ablazd) |
 |   Dev Team    | Felipe Rodrigues                  |         [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](x) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/felipe6san)        |
 |   Dev Team    | Murilo Rodrigues                |   [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](x) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/Zan-Kir)   |
 
