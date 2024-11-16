@@ -21,7 +21,7 @@
 
 > _Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados_
 
-### :link: Projeto disponível para visualização em [Lumina](lumina3-0.vercel.app/)
+### :link: Projeto disponível para visualização em [Lumina](https://lumina3-0.vercel.app/)
 
 ## 🏁 Entregas de Sprints
 
