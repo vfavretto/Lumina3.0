@@ -55,7 +55,7 @@ Desenvolvimento da funcionalidade de login, garantindo o acesso seguro dos usuá
 
 ![login](https://i.imgur.com/jeHNQ7O.png)
 
-![cadastro](https://i.imgur.com/xwEqEKN.png)
+
 </details>
 
 ### RF 02: Cadastro
@@ -70,6 +70,8 @@ Implementação do fluxo de cadastro, que permite a criação de novos perfis de
 - Integração com o banco de dados MongoDB para armazenamento das informações.
 
 ![cadastro](https://i.imgur.com/HxLijjB.png)
+
+![cadastro2](https://i.imgur.com/3rUcaJ8.png)
 
 </details>
 
