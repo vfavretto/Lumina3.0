@@ -50,6 +50,9 @@ Implementação da Página de Edição de Perfil
 - Adição de interface para alterar dados do perfil do usuário (e-mail, senha, foto de perfil, etc.).
   
 - Validação das alterações e atualização no banco de dados.
+
+![alterar](https://i.imgur.com/xwEqEKN.png)
+
 </details>
 
 ### RF 06: Gerenciador de Busca
