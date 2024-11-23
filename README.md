@@ -123,7 +123,7 @@ Apresentação:
   
 ## :dart: Backlog e User Stories
 
-![backlog](https://i.imgur.com/anMBNTF.png)
+![backlog](https://i.imgur.com/unqSQpj.png)
 ![userstories](https://i.imgur.com/filHyZW.png)
 
 → [Voltar ao topo](#topo)
