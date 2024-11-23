@@ -103,9 +103,6 @@ Avaliação Heurística da Página:
 
 **Objetivo:** 
 Concluir o projeto com todas as funcionalidades integradas e a documentação completa.
-
-Implementação da Página de Blog:
-- Criação de interface para leitura e postagem de notícias.
   
 Criação do Chat:
 - Configuração de comunicação.
