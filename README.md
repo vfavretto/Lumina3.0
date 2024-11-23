@@ -33,88 +33,6 @@
 | 04 | 30/11/2024 |      | [Relatório](https://github.com/vfavretto/Lumina3.0/blob/sprint-04/README.md) |
 
 
-## :pushpin: **Sprint 01: Preparação e Fundamentos**
- 
-**Objetivo:** 
-Estabelecer a base do projeto com tecnologias principais, estrutura de dados, e protótipo inicial.
- 
-Migração das Páginas de Angular para React:
-- Criação do esqueleto básico do projeto em React.
-- Conversão dos componentes do Angular para React.
-- Implementação do header, footer e navegação inicial.
- 
-Estruturação do Banco de Dados:
-- Definição do modelo lógico do banco de dados.
-- Criação do MER (Modelo Entidade-Relacionamento).
-- Configuração do MongoDB e criação das coleções principais.
- 
-Avaliação de Protótipo de Alta Fidelidade:
-- Ajustes necessários do protótipo no Figma.
- 
-Arquitetura MVC:
-- Implementação da estrutura base seguindo o padrão MVC.
-- Configuração do servidor com rotas iniciais.
- 
-Implementação de Microsserviço:
-- Planejamento de um microsserviço que será integrado ao sistema.
-- Configuração inicial do microsserviço.
-
- 
-## :pushpin: **Sprint 02: Funcionalidades de Usuário**
-
-**Objetivo:** 
-Implementar funcionalidades essenciais para o cadastro e autenticação.
-
-Implementação da Página de Cadastro:
-- Criação de formulário funcional com validação de dados.
-
-Aplicação do Login Social:
-- Integração com APIs de autenticação.
-- Implementação de tokens de autenticação.
-
-Documentação da API via Swagger:
-- Criação da documentação inicial da API REST.
-- Testes das rotas principais para garantir integridade e clareza.
-
-Testes Unitários:
-- Implementação de testes unitários com Jest.
-
-
-## :pushpin: **Sprint 03: Melhorias e Ampliação**
-
-**Objetivo:** 
-Refinar as funcionalidades existentes e expandir o sistema com mais interatividade.
-
-Implementação da Página de Edição de Perfil:
-- Adicionar funcionalidade para alterar dados do perfil.
-  
-Refatoração da Página de Parceiros:
-- Conversão para React.
-- Implementação de lógica para busca e filtros.
-  
-Criação do Diagrama UML de Classes:
-- Documentação completa do relacionamento entre classes.
-- Inclusão das classes de acesso ao banco de dados.
-  
-Avaliação Heurística da Página:
-- Revisão detalhada da usabilidade e acessibilidade da aplicação.
-
-## :pushpin: **Sprint 04: Finalização e Entrega**
-
-**Objetivo:** 
-Concluir o projeto com todas as funcionalidades integradas e a documentação completa.
-  
-Criação do Chat:
-- Configuração de comunicação.
-
-Documentação Completa do Projeto:
-- Organização de toda a documentação no GitHub.
-
-Apresentação:
-- Preparação da apresentação do projeto integrador.
-- Demonstração das principais funcionalidades e arquitetura do sistema.
-
-
 #### Detalhamento de Sprints disponível no [Jira](https://julinhasoares.atlassian.net/)
 
 → [Voltar ao topo](#topo)
@@ -153,7 +71,7 @@ Acesse nossas collections:
   
   Adotou-se uma arquitetura orientada a microsserviços, que promove a descentralização e o isolamento de responsabilidades entre o front-end e o back-end. Essa abordagem garantiu que as funcionalidades fossem integradas de maneira eficiente por meio do consumo das APIs disponíveis. A documentação dos microsserviços, um requisito não funcional essencial para o projeto, foi realizada ao longo de todo o desenvolvimento utilizando ferramentas como Swagger e readmes nos repositórios, mapeando detalhadamente os endpoints de cada API.
   
-  Além disso, outras documentações, como fluxos de dados, diagramas de classe e de uso, modelagem do banco de dados e arquitetura do sistema, foram organizadas e compiladas em um PDF.
+  Além disso, outras documentações, como fluxos de dados, diagramas de classe e de uso, modelagem do banco de dados e arquitetura do sistema, foram organizadas e compiladas em um [PDF](https://github.com/vfavretto/Lumina3.0/blob/main/Projeto%20Interdisciplinar%203Sem.docx.pdf).
 
 ## Protótipo de Alta Fidelidade
 
