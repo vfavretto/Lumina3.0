@@ -27,10 +27,10 @@
 
 | Sprint | Previsão | Status |  Histórico |
 |:--:|:----------:|:----------------:| :-------------------------------------------------:|
-| 01 | 30/08/2024 |  Concluída  ✔️  | [Relatório]( ) |
-| 02 | 05/10/2024 |  Concluída  ✔️  | [Relatório]( ) |
-| 03 | 04/11/2024 |  Concluída  ✔️  | [Relatório]( ) |
-| 04 | 30/11/2024 |      | [Relatório]( ) |
+| 01 | 30/08/2024 |  Concluída  ✔️  | [Relatório](https://github.com/vfavretto/Lumina3.0/blob/sprint-01/README.md) |
+| 02 | 05/10/2024 |  Concluída  ✔️  | [Relatório](https://github.com/vfavretto/Lumina3.0/blob/sprint-02/README.md) |
+| 03 | 04/11/2024 |  Concluída  ✔️  | [Relatório](https://github.com/vfavretto/Lumina3.0/blob/sprint-03/README.md) |
+| 04 | 30/11/2024 |      | [Relatório](https://github.com/vfavretto/Lumina3.0/blob/sprint-04/README.md) |
 
 
 ## :pushpin: **Sprint 01: Preparação e Fundamentos**
