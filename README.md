@@ -25,12 +25,12 @@
 
 ## 🏁 Entregas de Sprints
 
-| Sprint | Previsão | Status |
-|:--:|:----------:|:----------------:|
-| 01 | 30/08/2024 |  Concluída  ✔️  | 
-| 02 | 05/10/2024 |  Concluída  ✔️  | 
-| 03 | 04/11/2024 |  Concluída  ✔️  | 
-| 04 | 30/11/2024 |      | 
+| Sprint | Previsão | Status |  Histórico |
+|:--:|:----------:|:----------------:| :-------------------------------------------------:|
+| 01 | 30/08/2024 |  Concluída  ✔️  | [Relatório]( ) |
+| 02 | 05/10/2024 |  Concluída  ✔️  | [Relatório]( ) |
+| 03 | 04/11/2024 |  Concluída  ✔️  | [Relatório]( ) |
+| 04 | 30/11/2024 |      | [Relatório]( ) |
 
 
 ## :pushpin: **Sprint 01: Preparação e Fundamentos**
