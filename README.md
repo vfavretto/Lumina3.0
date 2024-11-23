@@ -50,8 +50,12 @@ Adicionalmente, foi desenvolvido e apresentado um protótipo inicial no [Figma](
 Desenvolvimento da funcionalidade de login, garantindo o acesso seguro dos usuários à plataforma. As etapas implementadas foram:
 
 - Autenticação de usuários com validação de credenciais.
-- Feedback visual em caso de erro de autenticação.
+- Feedback em caso de erro de autenticação.
 - Criação de tela inicial acessível apenas após o login.
+
+![login](https://i.imgur.com/jeHNQ7O.png)
+
+![cadastro](https://i.imgur.com/xwEqEKN.png)
 </details>
 
 ### RF 02: Cadastro
@@ -64,6 +68,8 @@ Implementação do fluxo de cadastro, que permite a criação de novos perfis de
 - Formulário dinâmico para registro de informações do usuário.
 - Validação de dados obrigatórios, como e-mail e senha.
 - Integração com o banco de dados MongoDB para armazenamento das informações.
+
+![cadastro](https://i.imgur.com/HxLijjB.png)
 
 </details>
 
