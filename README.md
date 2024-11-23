@@ -40,9 +40,21 @@
 <span id="backlog">
   
 ## :dart: Backlog e User Stories
+<details>
+   <summary>Clique aqui para visualizar o Backlog</summary>
+    <br>
+    <div align="center">
+    <img src="https://i.imgur.com/unqSQpj.png" alt="Backlog">
+    </div>
+</details>
 
-![backlog](https://i.imgur.com/unqSQpj.png)
-![userstories](https://i.imgur.com/filHyZW.png)
+<details>
+   <summary>Clique aqui para visualizar as User Stories</summary>
+    <br>
+  <div align="center">
+    <img src="https://i.imgur.com/filHyZW.png" alt="User Stories">
+  </div>
+</details>
 
 → [Voltar ao topo](#topo)
 
