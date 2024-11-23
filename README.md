@@ -72,7 +72,6 @@ Desenvolvimento de uma interface funcional para novos usuários:
 Documentação da API via Swagger:
   
 - Criação da documentação inicial da API REST para endpoints de login e cadastro.
-- Testes automatizados nas principais rotas para garantir clareza e confiabilidade.
   
 Testes Unitários:
 - Implementação de testes unitários utilizando Jest para verificar a funcionalidade e integridade das rotas principais de login e cadastro.
